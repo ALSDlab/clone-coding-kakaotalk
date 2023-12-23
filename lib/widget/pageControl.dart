@@ -34,7 +34,7 @@ class _PageControlState extends State<PageControl> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
-                  Colors.white, // 이미지 투명도 조절
+                  Colors.white,
                   BlendMode.dstATop,
                 ),
                 image: AssetImage(

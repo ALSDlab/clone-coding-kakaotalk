@@ -8,7 +8,7 @@ class BannerCard extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.all(15),
-        height: 100,
+        height: 120,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Image.asset(
