@@ -25,37 +25,6 @@ class _PageControlState extends State<PageControl> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.greenAccent.withOpacity(0.6),
-        leadingWidth: 90,
-        leading: TextButton(
-          child:  Text(
-            '채팅',
-            style: TextStyle(color: Colors.black, fontSize: 22),
-          ),
-          onPressed: () {
-            setState(() {
-              _index = 0;
-            });
-          },
-        ),
-        actions: [
-
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.add_comment_outlined),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.settings_outlined),
-            onPressed: () {},
-          ),
-        ],
-      ),
       body: Stack(
         children: [
           Container(

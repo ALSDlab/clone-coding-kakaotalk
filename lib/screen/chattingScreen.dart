@@ -11,22 +11,44 @@ class _ChattingScreen extends State<ChattingScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-        children: [
-          const Center(
-            child: Text(
-              '채팅방들',
-              style: TextStyle(color: Colors.black),
-            ),
+      children: [
+        Opacity(
+          opacity: 0,
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
           ),
-          Opacity(
-            opacity: 0,
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-            ),
-          ),
-        ],
-      );
-    ;
+        ),
+        CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.transparent,
+              leadingWidth: 90,
+              leading: TextButton(
+                child: const Text(
+                  '채팅',
+                  style: TextStyle(color: Colors.black, fontSize: 22),
+                ),
+                onPressed: () {},
+              ),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: const Icon(Icons.add_comment_outlined),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: const Icon(Icons.settings_outlined),
+                  onPressed: () {},
+                ),
+              ],
+            )
+          ],
+        )
+      ],
+    );
   }
 }

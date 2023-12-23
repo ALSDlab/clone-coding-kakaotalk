@@ -8,17 +8,10 @@ class ShoppingScreen extends StatefulWidget {
 }
 
 class _ShoppingScreen extends State<ShoppingScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const Center(
-          child: Text(
-            '쇼핑하기',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
         Opacity(
           opacity: 0,
           child: Container(
@@ -26,6 +19,29 @@ class _ShoppingScreen extends State<ShoppingScreen> {
             height: double.infinity,
           ),
         ),
+        CustomScrollView(slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.transparent,
+            leadingWidth: 90,
+            leading: TextButton(
+              child: const Text(
+                '쇼핑',
+                style: TextStyle(color: Colors.black, fontSize: 22),
+              ),
+              onPressed: () {},
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.shopping_cart_outlined),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: const Icon(Icons.settings_outlined),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ]),
       ],
     );
   }
