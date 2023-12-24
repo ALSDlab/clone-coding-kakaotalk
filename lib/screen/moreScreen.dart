@@ -12,9 +12,9 @@ class _MoreScreen extends State<MoreScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Opacity(
+        const Opacity(
           opacity: 0,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
           ),
