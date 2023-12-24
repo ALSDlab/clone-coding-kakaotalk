@@ -17,8 +17,7 @@ class _ChattingScreen extends State<ChattingScreen> {
   @override
   void initState() {
     super.initState();
-    sliverList.insert(
-        0,
+    sliverList.insert(0,
         SliverAppBar(
           pinned: true,
           surfaceTintColor: const Color.fromRGBO(163, 244, 204, 1),
@@ -64,6 +63,7 @@ class _ChattingScreen extends State<ChattingScreen> {
           ),
         ),
         CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: sliverList,
         )
       ],
