@@ -22,7 +22,7 @@ class _ChattingScreen extends State<ChattingScreen> {
         SliverAppBar(
           pinned: true,
           surfaceTintColor: const Color.fromRGBO(163, 244, 204, 1),
-          backgroundColor: const Color.fromRGBO(163, 244, 204, 1),
+          backgroundColor: Colors.white,
           leadingWidth: 90,
           leading: TextButton(
             child: const Text(

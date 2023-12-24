@@ -44,7 +44,7 @@ class _PageControlState extends State<PageControl> {
             ),
           ),
           Container(
-            color: Colors.greenAccent.withOpacity(0.6),
+            color: Colors.white.withOpacity(0.8),
           ),
           _pages[_index],
         ],
@@ -61,7 +61,7 @@ class _PageControlState extends State<PageControl> {
             });
           },
           currentIndex: _index,
-          backgroundColor: Colors.greenAccent.withOpacity(0.6),
+          backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

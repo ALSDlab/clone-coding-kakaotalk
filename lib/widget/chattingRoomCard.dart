@@ -1,4 +1,5 @@
 import 'package:clone_coding_kakaotalk/chatModel/chats.dart';
+import 'package:clone_coding_kakaotalk/widget/DateFormatWidget.dart';
 import 'package:clone_coding_kakaotalk/widget/profileImageView/fourOrMore.dart';
 import 'package:clone_coding_kakaotalk/widget/profileImageView/onlyOne.dart';
 import 'package:clone_coding_kakaotalk/widget/profileImageView/three.dart';
@@ -10,40 +11,45 @@ class ChattingRoomCard extends StatelessWidget {
 
   final ChatDetail chat;
 
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Stack(
         children: [
-          Container(
-            height: 80,
+          SizedBox(
+            height: 100,
             width: 400,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 10, bottom: 3, right: 3),
+                  margin: const EdgeInsets.only(left: 10, bottom: 3, right: 3),
                   child: ProfilImage(chat: chat),
                 ),
                 Expanded(
-                  flex: 7,
+                  flex: 8,
                   child: Container(
-                    margin: EdgeInsets.only(left: 5, bottom: 20, right: 5),
+                    padding: const EdgeInsets.only(top: 15),
+                    margin: const EdgeInsets.only(left: 5, bottom: 10, right: 5),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Expanded(
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Text(
-                                chat.names.join(', '),
-                                overflow: TextOverflow.ellipsis,
-                                // 넘어갈 경우 "..."으로 표시
-                                maxLines: 1,
-                                style: const TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontFamily: 'Exo2-Bold'),
+                              Flexible(
+                                child: Text(
+                                  chat.names.join(', '),
+                                  overflow: TextOverflow.ellipsis,
+                                  // 넘어갈 경우 "..."으로 표시
+                                  maxLines: 1,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontFamily: 'Exo2-Bold'),
+                                ),
                               ),
                               const SizedBox(
                                 width: 7,
@@ -60,13 +66,13 @@ class ChattingRoomCard extends StatelessWidget {
                           ),
                         ),
                         Expanded(
+                          flex: 2,
                           child: SizedBox(
                             width: double.infinity,
                             child: Text(
                               chat.updateChat,
                               overflow: TextOverflow.ellipsis,
-                              // 넘어갈 경우 "..."으로 표시
-                              maxLines: 1,
+                             maxLines: 1,
                               style: const TextStyle(
                                   fontSize: 15,
                                   color: Colors.indigo,
@@ -78,16 +84,17 @@ class ChattingRoomCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
-                    flex: 2,
-                    child: Container(
-                        margin: EdgeInsets.only(left: 5, bottom: 10, right: 10),
-                      child: Text(chat.updateDate),
-                    ))
+                Container(
+                  padding: const EdgeInsets.only(top:17),
+                  alignment: Alignment.topRight,
+                  width: 70,
+                    margin: const EdgeInsets.only(left: 5, bottom: 10, right: 17),
+                  child: DateFormatWidget(chat: chat),
+                )
               ],
             ),
           ),
-          ButtonBar(),
+          const ButtonBar(),
         ],
       ),
     );
